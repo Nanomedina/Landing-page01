@@ -135,8 +135,9 @@ input:focus {
     color: var(--color4);
     font-family: "star-jedi", sans-serif;
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
     height: 100%;
-    margin: auto;
-    padding-top: 2rem;
-}
+    padding-top: 10rem; 
+}  
+
+
