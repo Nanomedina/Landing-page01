@@ -20,17 +20,25 @@
 --color3: #6d4cb0;
 --color4: #b7b4c7;
 --color5: white;
+--color6: rgb(185, 185, 39)
 }
 
 body {
     background-color: var(--color4);
     }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .navbar{
     background-color:var(--color2);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 150px;
     }
@@ -38,28 +46,28 @@ body {
 .imagen {
     margin:0;
     padding: 0;
-    width: 500px;
+    width: 50%;
     padding-left: 40px;
     display: flex;
+    height: 100%;
 }
 
-.list ul{
+.menu {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
+    justify-content: flex-end;
     width: 100%;
-    height: 50px;
-    font-family: "Oswald", ;
+    padding-right: 20px;
 }
 
-.list{
-    width: 50%;
+.toggle{
+    width: 70%;
     height: 100%;
     display: flex;
     align-items: center;
     padding: 20px;
-    
+    justify-content: space-between;
+    list-style: none;
+    font-family: "oswald";
     }
 
 a {
@@ -67,6 +75,42 @@ a {
     color: var(--color4);
     font-size: 20px;
     font-family: "oswald", sans-serif;
+}
+
+label{
+    cursor: pointer;
+    display:none ;
+    color: var(--color4);
+    width: 40px;
+    height: 40px;
+    font-size: 2.5rem;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.list {
+    display: none;
+}
+
+.list li {
+    display: block;
+}
+
+a:hover {
+    font-size: 25px ;
+    transition: 0.3s;
+    color: var(--color2);
+    width: 1rem;
+    background-color: var(--color4);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.menu-toggle:checked + .list {
+    display: block;
 }
 
 input {
@@ -85,7 +129,7 @@ input:focus {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background-image: url(./Fondo.jfif);
+    background-image: url(./IMG/Fondo.jfif);
     background-size: cover;
     background-position:center;
     width: 100%;
@@ -96,6 +140,7 @@ input:focus {
     width: 500px;
     border-radius: 1rem;
     opacity: 0.8;
+    display: inline;
 }
 
 .slogan {
@@ -126,9 +171,9 @@ input:focus {
 }
 
 .texto {
-    background-color: var(--color2);
+    background-image: url(./IMG/5445-estrellas.jpg);
     width: 100%;
-    height: 50vw;
+    height: 40vw;
     }
 
 .texto p {
@@ -137,7 +182,196 @@ input:focus {
     text-align: center;
     font-size: 4rem;
     height: 100%;
-    padding-top: 10rem; 
+    padding-top: 7.5rem; 
 }  
 
+h1{
+    font-family: "star-jedi", sans-serif;
+    text-align:center;
+    font-size: 7rem;
+    color:var(--color6);
+    background-image: url(./IMG/5445-estrellas.jpg);
+    background-position:bottom;
+    text-decoration:underline;
+    text-decoration-style:double;
+    height: 20rem;
+    padding-top: 6rem;
+}
 
+.pelis {
+    height: 60rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-image: url(./IMG/5445-estrellas.jpg);
+    height: auto;
+}
+.descripcion_peli {
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    /* flex-direction: column; */
+    width: 40%;
+    height: 35rem;
+    border:double rgb(185, 185, 39) 20px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.descripcion_peli img {
+    width: 40%;
+    height: auto;
+}
+
+.descripcion_peli p {
+    width: 50%;
+    height: auto;
+    font-family: "oswald", sans-serif;
+    color: var(--color5);
+    }
+
+@media (max-width: 1300px) {
+
+.toggle {
+    display: none;
+}
+
+
+label{
+    display: block;
+}
+
+.info {
+    flex-direction:column;
+    height: 75vh;
+}
+
+.star {
+    display: none;
+}
+
+.texto p {
+    font-size: 2rem; 
+}  
+
+h1{
+    font-size: 3.5rem;
+    height: 15rem;
+}
+
+.pelis {
+        flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:nowrap;
+}
+
+.descripcion_peli {
+    width: 80%;
+    height: 30rem;
+}
+
+.descripcion_peli img {
+    width: auto;
+    height: 25rem;
+}
+
+}
+
+@media (max-width: 768px) {
+
+    .texto p {
+        font-size: 1rem; 
+        padding-top: 4rem;
+    }  
+    
+    h1{
+        font-size: 3.5rem;
+        height: 10rem;
+        padding-top: 4rem;
+    }
+    
+    .descripcion_peli {
+        width: 80%;
+        height: 40rem;
+        flex-direction: column;
+    }
+    
+    .descripcion_peli img {
+        width: auto;
+        height: 10rem;
+    }
+    
+    .descripcion_peli p {
+        width: 95%;
+        }
+    }
+
+    @media (max-width: 415px) {
+
+        .navbar{
+            height: 75px;
+            }
+
+        .imagen {
+            width: 10px;
+            padding-left: 10px;
+        }
+
+        .info {
+            background-size: cover;
+            background-position:center;
+            width: 100%;
+            height: 35vh;
+        }
+
+        .slogan {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 380px;
+        }
+
+        .slogan h2 {
+            font-size: 1.5rem;
+            max-width: 350px;
+            margin-bottom: 0.5rem;
+            }
+
+        .slogan h3 {
+            font-size: 15px;
+            max-width: 300px;
+        }    
+        .texto {
+            height: 30vw;
+            }
+        .texto p {
+            font-size: 0.75rem; 
+            padding-top: 2rem;
+            height: 6rem;
+        }  
+        
+        h1{
+            font-size: 2rem;
+            height: 6rem;
+            padding-top: 2.5rem;
+        }
+        
+        .descripcion_peli {
+            width: 80%;
+            height: 45rem;
+            flex-direction: column;
+            border:double rgb(185, 185, 39) 10px;
+        }
+        
+        .descripcion_peli img {
+            width: auto;
+            height: 10rem;
+        }
+        
+        .descripcion_peli p {
+            width: 95%;
+            }
+        }    
